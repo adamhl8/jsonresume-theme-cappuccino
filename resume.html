@@ -1,0 +1,348 @@
+<html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui"/><title>Adam Langbert</title><link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/><style>@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+
+:root {
+  --secondary-color: #56817a;
+}
+
+.secondary {
+  color: var(--secondary-color);
+}
+
+.bold {
+  font-weight: 700;
+}
+
+html {
+  background: white;
+}
+
+body {
+  font-family: "Source Sans 3", Helvetica, Arial, sans-serif;
+  font-weight: 450;
+  background: white;
+  margin: 50px 0 100px;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  color: #39424b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  margin: 0;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+h2 {
+  font-weight: 350;
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+h3 {
+  font-weight: 350;
+  font-size: 15px;
+  letter-spacing: 0.4px;
+}
+
+h3.bold {
+  font-weight: 700;
+}
+
+h4 {
+  font-weight: 350;
+  font-size: 14px;
+}
+
+h4.bold {
+  font-weight: 700;
+}
+
+h5 {
+  font-weight: 350;
+  font-size: 13px;
+}
+
+h5.italic {
+  font-style: italic;
+}
+
+h6 {
+  font-weight: 450;
+  font-size: 12px;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #2895f1;
+}
+
+a .fa-external-link {
+  font-size: 12px;
+  vertical-align: text-top;
+}
+
+p,
+li {
+  font-size: 13px;
+}
+
+blockquote {
+  font-size: 13px;
+  font-weight: 400;
+  font-style: italic;
+  margin: 10px 25px;
+}
+
+em {
+  color: #999;
+}
+
+ul {
+  margin: 10px 0 0;
+  -webkit-padding-start: 25px;
+}
+
+ul li {
+  padding-left: 10px;
+}
+
+ul.minimal {
+  list-style: none;
+  padding: 0;
+}
+
+ul.minimal li {
+  margin-bottom: 3px;
+  padding-left: 0;
+}
+
+ul.two-column {
+  -webkit-column-count: 2;
+  -webkit-column-gap: 28px;
+  column-count: 2;
+  column-gap: 28px;
+}
+
+ul.two-column li {
+  padding-left: 0;
+}
+
+.container {
+  padding-top: 20px;
+}
+
+.keyline {
+  width: 45px;
+  margin: 8px 0 10px;
+  border-top: 1px solid var(--secondary-color);
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.profile-pic {
+  margin-top: -5px;
+  margin-right: 18px;
+}
+
+.profile-pic img {
+  height: 52px;
+  width: 52px;
+  border-radius: 50%;
+  border: 2px solid var(--secondary-color);
+}
+
+.summary {
+  margin: 5px 0 5px;
+}
+
+.sublink {
+  font-size: 80%;
+  font-weight: 400;
+  color: dimgray;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+@page {
+  size: letter;
+}
+
+/* Layouts */
+.page {
+  background: white;
+  width: 612px;
+  min-height: 792px;
+  display: block;
+  margin: 0 auto;
+  border-top: 10px solid var(--secondary-color);
+  padding: 20px 22px 30px 34px;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.page:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.left-column {
+  float: left;
+  width: 160px;
+  margin-right: 20px;
+  word-wrap: break-word;
+}
+
+.right-column {
+  width: auto;
+  overflow: hidden;
+}
+
+.item {
+  margin-bottom: 15px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+@media print {
+  body {
+    margin: 0;
+  }
+
+  .page {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 25px 0px 25px 0px;
+    box-shadow: none;
+  }
+
+  .page .resume-header,
+  .page .resume-content {
+    padding: 0 34px 0 34px;
+  }
+
+  .container {
+    page-break-inside: avoid;
+  }
+
+  .work-container .item {
+    page-break-inside: avoid;
+  }
+
+  .fa-external-link {
+    display: none;
+  }
+}
+
+/* Components */
+.info-tag-container {
+  margin-bottom: 10px;
+  line-height: 0;
+}
+
+.info-tag-container .fa {
+  font-size: 15px;
+  width: 12px;
+  margin-right: 5px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.info-tag-container .fa.fa-map-marker {
+  font-size: 17px;
+}
+
+.info-tag-container .fa.fa-mobile {
+  font-size: 19px;
+}
+
+.info-tag-container .fa.fa-envelope-o {
+  font-size: 13px;
+}
+
+.info-tag-container .fa.fa-desktop {
+  font-size: 12px;
+}
+
+.info-tag-container .fa.fa-external-link {
+  width: auto;
+  font-size: inherit;
+  vertical-align: text-top;
+}
+
+.info-tag-container .info-text {
+  font-size: 13px;
+  text-transform: none;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.references-container .fa {
+  font-size: 14px;
+}
+
+.education-container .item {
+  display: grid;
+}
+
+.education-container .left-column {
+  word-wrap: unset;
+}
+
+.education-container .location {
+  padding-bottom: 6px;
+  font-weight: 400;
+}
+
+.education-container .specialization {
+  text-transform: none;
+  font-style: italic;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.main-skill {
+  font-size: 13px;
+}
+
+.skill {
+  margin: 0.15em;
+  padding: 0.15em;
+  background: ghostwhite;
+  border-radius: 5px;
+}
+</style></head><body><main id="resume" class="page"><header class="resume-header clearfix"><div class="profile-header pull-left"><h1>Adam Langbert</h1><h2 class="secondary bold">Software Developer</h2></div><div class="profile-pic pull-right"></div></header><div class="resume-content"><aside class="left-column"><div class="container about-container"><div class="title"><h3>About</h3><div class="keyline"></div></div><div class="info-tag-container"><i class="fa fa-map-marker"></i><h6 class="info-text">Austin, TX</h6></div><div class="info-tag-container"><i class="fa fa-envelope-o"></i><h6 class="info-text"><a href="mailto:adamhl@pm.me" target="_blank" rel="noreferrer">adamhl@pm.me</a></h6></div><div class="info-tag-container"><i class="fa fa-mobile"></i><h6 class="info-text"><a href="tel:941-504-8001" target="_blank" rel="noreferrer">941-504-8001</a></h6></div><div class="info-tag-container"><i class="fa fa-github"></i><h6 class="info-text"><a href="https://github.com/adamhl8" target="_blank" rel="noreferrer">adamhl8</a></h6></div><div class="info-tag-container"><i class="fa fa-linkedin-square"></i><h6 class="info-text"><a href="https://www.linkedin.com/in/adamlangbert/" target="_blank" rel="noreferrer">adamlangbert</a></h6></div></div><div class="container education-container"><div class="title"><h3>Education</h3><div class="keyline"></div></div><section class="item"><h4 class="bold pull-left">University of Maryland</h4><h5><span class="secondary bold">BS in Computer Science</span></h5><h5><i>in progress</i></h5></section><section class="item"><h4 class="bold pull-left">University of Maryland</h4><h5><span class="secondary bold">AA in Computer Science</span></h5><h5><i>GPA: 4.0</i></h5></section></div><div class="skills-container"><section class="container"><div class="title"><h3>Languages</h3><div class="keyline"></div></div><div class="minimal flex-container"><h6 class="main-skill skill">TypeScript/JavaScript</h6><h6 class="main-skill skill">HTML</h6><h6 class="main-skill skill">CSS</h6><h6 class="main-skill skill">Python</h6><h6 class="main-skill skill">Java</h6><h6 class="main-skill skill">Lua</h6><h6 class="main-skill skill">SQL</h6></div></section><section class="container"><div class="title"><h3>Technologies</h3><div class="keyline"></div></div><div class="minimal flex-container"><h6 class="main-skill skill">React</h6><h6 class="main-skill skill">TailwindCSS</h6><h6 class="main-skill skill">Git</h6><h6 class="main-skill skill">POSIX/Unix/Linux</h6><h6 class="main-skill skill">Docker</h6><h6 class="main-skill skill">Node</h6><h6 class="main-skill skill">Spring/Spring Boot</h6><h6 class="main-skill skill">PostgreSQL</h6><h6 class="main-skill skill">Prisma</h6></div></section><section class="container"><div class="title"><h3>DevOps</h3><div class="keyline"></div></div><div class="minimal flex-container"><h6 class="main-skill skill">AWS</h6><h6 class="main-skill skill">GitHub Actions</h6><h6 class="main-skill skill">GitLab CI/CD</h6><h6 class="main-skill skill">TCP/IP</h6><h6 class="main-skill skill">DNS</h6></div></section></div></aside><div class="right-column"><div class="container work-container"><div class="title"><h3>Experience</h3><div class="keyline"></div></div><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left">Software Developer</h3><h5 class="italic pull-right"></h5></div><h4><span class="secondary bold">Army Software Factory</span> | <i>June, 2022 - Present</i></h4><p class="summary">Tech lead for an internal tools team, focusing on accelerating development processes and ensuring security and compliance throughout the organization. The team plays a pivotal role in setting technical standards and providing support across app development teams.</p><ul><li>Develops and maintains a comprehensive full-stack web application starter template, which significantly reduces time to production and increases developer efficiency for 15+ app teams.</li><li>Maintains over 20 frontend/backend packages, providing reusable solutions that streamline development processes.</li><li>Developed and delivered targeted programming curriculum, mentoring new developers and enriching the organization&#x27;s technical knowledge base.</li></ul></section><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left">25S - Satellite Communication Systems Operator-Maintainer</h3><h5 class="italic pull-right"></h5></div><h4><span class="secondary bold">US Army</span> | <i>2019 - June, 2022</i></h4><p class="summary">Duties included the installation, configuration, maintenance, and operation of various fixed SATCOM terminals in support of both military and commercial end-users.</p><ul><li>Utilized extensive knowledge of TCP/IP, DNS, and other networking protocols to troubleshoot and resolve issues.</li><li>Configured networking equipment such as routers, switches, modems, circuits, trunk groups, and other related equipment.</li></ul></section><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left">Store Manager / Technician</h3><h5 class="italic pull-right"></h5></div><h4><span class="secondary bold">CPR Cell Phone Repair</span> | <i>2018 - 2019</i></h4><ul><li>Managed employees, daily operations of the retail store, and the retail inventory.</li><li>Diagnosed, repaired, and serviced desktop computers, laptops, and mobile devices. Issues included software troubleshooting, product education, and hardware replacement/repairs.</li><li>Provided personalized on-site service to both residential and business customers.</li></ul></section><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left">Computer Repair Technician</h3><h5 class="italic pull-right"></h5></div><h4><span class="secondary bold">Micro Center</span> | <i>2017 - 2018</i></h4></section></div><div class="container project-container"><div class="title"><h3>Open Source Projects</h3><div class="keyline"></div></div><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left"><a href="https://github.com/adamhl8/shellrunner" target="_blank" rel="noreferrer">shellrunner<span class="sublink">∙ <a href="https://github.com/adamhl8/shellrunner" target="_blank" rel="noreferrer" class="sublink">github.com/adamhl8/shellrunner</a></span></a></h3><h5 class="italic pull-right"></h5></div><div class="flex-container"><h6 class="skill">Python</h6><h6 class="skill">Shell</h6><h6 class="skill">Bash</h6><h6 class="skill">Scripting</h6></div><p class="summary">A Python library for writing safe shell scripts, combining the streamlined utility of shell scripting with the power of Python for enhanced control flow, error handling, and script safety.</p></section><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left"><a href="https://github.com/adamhl8/discord-bot-shared" target="_blank" rel="noreferrer">discord-bot-shared<span class="sublink">∙ <a href="https://github.com/adamhl8/discord-bot-shared" target="_blank" rel="noreferrer" class="sublink">github.com/adamhl8/discord-bot-shared</a></span></a></h3><h5 class="italic pull-right"></h5></div><div class="flex-container"><h6 class="skill">TypeScript</h6><h6 class="skill">discord.js</h6><h6 class="skill">Library</h6></div><p class="summary">A library for streamlined discord.js bot development. It simplifies command/event registration, improves error handling, and provides common utilities.</p></section><section class="item"><div class="section-header clearfix"><h3 class="bold pull-left"><a href="https://github.com/adamhl8/dataviewjs-habit-tracker" target="_blank" rel="noreferrer">dataviewjs-habit-tracker<span class="sublink">∙ <a href="https://github.com/adamhl8/dataviewjs-habit-tracker" target="_blank" rel="noreferrer" class="sublink">github.com/adamhl8/dataviewjs-habit-tracker</a></span></a></h3><h5 class="italic pull-right"></h5></div><div class="flex-container"><h6 class="skill">TypeScript</h6><h6 class="skill">obsidian.md</h6><h6 class="skill">Plugin</h6></div><p class="summary">A code snippet for the Obsidian plugin Dataview, designed to generate a dynamic table without requiring specific Dataview annotations.</p></section></div></div></div></main></body></html>
