@@ -1,7 +1,0 @@
-<% if (it.basics?.summary) { %>
-    <div class="container summary-container">
-        <p class="summary">
-            <%= it.basics.summary %>
-        </p>
-    </div>
-<% } %>

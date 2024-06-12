@@ -32,18 +32,10 @@ function Resume() {
               <About />
               <Education />
               <Skills />
-              {/* <%~ include("/sections/languages", resume) %> */}
-              {/* <%~ include("/sections/interests", resume) %> */}
             </aside>
             <div className="right-column">
               <Work />
               <Projects />
-              {/* <%~ include("/sections/summary", resume) %>
-        <%~ include("/sections/projects", resume) %>
-        <%~ include("/sections/volunteer", resume) %>
-        <%~ include("/sections/awards", resume) %>
-        <%~ include("/sections/publications", resume) %>
-        <%~ include("/sections/references", resume) %> */}
             </div>
           </div>
         </main>
