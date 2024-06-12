@@ -21,7 +21,7 @@ function Resume() {
           href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
           rel="stylesheet"
         />
-        <style dangerouslySetInnerHTML={{ __html: css }}></style>
+        <style dangerouslySetInnerHTML={{ __html: css }} />
       </head>
 
       <body>
