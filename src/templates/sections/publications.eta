@@ -1,0 +1,20 @@
+<% if (it.publications?.length) { %>
+<div class="container publications-container">
+    <%~ include("/components/title", {value: "Publications"}) %>
+
+    <% for (const publication of it.publications) { %>
+    <section class="item">
+        <%~ include("/components/section-header", {name: publication.name}) %>
+
+        <% if (publication.publisher) { %>
+        <h5 class="awarder"><%= publication.publisher %></h5>
+        <% } %>
+
+        <% if (publication.summary) { %>
+        <p class="summary"><%= publication.summary %></p>
+        <% } %>
+
+    </section>
+    <% } %>
+</div>
+<% } %>

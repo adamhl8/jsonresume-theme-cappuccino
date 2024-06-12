@@ -1,0 +1,27 @@
+<% if (it.volunteer?.length) { %>
+<div class="container volunteer-container">
+    <%~ include("/components/title", {value: "Volunteer"}) %>
+
+    <% for (const volunteer of it.volunteer) { %>
+    <section class="item">
+        <%~ include("/components/section-header", {name: volunteer.organization, showWebsite: true}) %>
+
+        <% if (volunteer.position) { %>
+        <h5><%= volunteer.position %></h5>
+        <% } %>
+
+        <% if (volunteer.summary) { %>
+        <p class="summary"><%= volunteer.summary %></p>
+        <% } %>
+
+        <% if (volunteer.highlights?.length) { %>
+        <ul>
+            <% for (const highlight of volunteer.highlights) { %>
+            <li><%= highlight %></li>
+            <% } %>
+        </ul>
+        <% } %>
+    </section>
+    <% } %>
+</div>
+<% } %>

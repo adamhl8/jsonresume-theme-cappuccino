@@ -1,0 +1,40 @@
+<% const { resume, css } = it %>
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui">
+  <title><%= resume.basics.name %></title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <style>
+    <%~ css %>
+  </style>
+</head>
+
+<body>
+  <main id="resume" class="page">
+    <%~ include("/components/resume-header", resume) %>
+    <div class="resume-content">
+      <aside class="left-column">
+        <%~ include("/sections/about", resume) %>
+        <%~ include("/sections/education", resume) %>
+        <%~ include("/sections/skills", resume) %>
+        <%~ include("/sections/languages", resume) %>
+        <%~ include("/sections/interests", resume) %>
+      </aside>
+      <div class="right-column">
+        <%~ include("/sections/summary", resume) %>
+        <%~ include("/sections/work", resume) %>
+        <%~ include("/sections/projects", resume) %>
+        <%~ include("/sections/volunteer", resume) %>
+        <%~ include("/sections/awards", resume) %>
+        <%~ include("/sections/publications", resume) %>
+        <%~ include("/sections/references", resume) %>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

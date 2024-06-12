@@ -1,0 +1,19 @@
+<% if (it.awards?.length) { %>
+<div class="container awards-container">
+    <%~ include("/components/title", {value: "Awards"}) %>
+
+    <% for (const award of it.awards) { %>
+        <section class="item">
+            <%~ include("/components/section-header", {name: award.title}) %>
+
+            <% if (award.awarder) { %>
+            <h5 class="awarder"><%= award.awarder %></h5>
+            <% } %>
+
+            <% if (award.summary) { %>
+            <p class="summary"><%= award.summary %></p>
+            <% } %>
+        </section>
+    <% } %>
+</div>
+<% } %>

@@ -1,0 +1,20 @@
+<% if (it.references?.length) { %>
+<div class="container references-container">
+    <%~ include("/components/title", {value: "References"}) %>
+
+    <% for (const reference of it.references) { %>
+        <section class="item clearfix">
+            <% if (reference.reference) { %>
+            <i class="fa fa-quote-left pull-left" aria-hidden="true"></i>
+            <blockquote>
+                <%= reference.reference %>
+            </blockquote>
+            <% } %>
+
+            <% if (reference.name) { %>
+            <h5 class="pull-right"> — <%= reference.name %></h5>
+            <% } %>
+        </section>
+    <% } %>
+</div>
+<% } %>

@@ -1,0 +1,20 @@
+<% if (it.interests?.length) { %>
+    <div class="container interests-container">
+        <%~ include("/components/title", {value: "Interests"}) %>
+
+        <% for (const interest of it.interests) { %>
+            <section class="item">
+                <% if (interest.name) { %>
+                    <h4 class="bold"><%= interest.name %></h4>
+                <% } %>
+                <% if (interest.keywords?.length) { %>
+                    <ul class="minimal">
+                        <% for (const keyword of interest.keywords) { %>
+                            <li><%= keyword %></li>
+                        <% } %>
+                    </ul>
+                <% } %>
+            </section>
+        <% } %>
+    </div>
+<% } %>

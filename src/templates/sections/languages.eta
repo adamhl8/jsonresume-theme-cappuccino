@@ -1,0 +1,13 @@
+<% if (it.languages?.length) { %>
+    <div class="container languages-container">
+        <%~ include("/components/title", {value: "Languages"}) %>
+
+        <ul class="minimal">
+            <% for (const language of it.languages) { %>
+                <li>
+                    <h6><%= language.language %> <% if (language.fluency) { %><em>(<%= language.fluency %>)</em><% } %></h6>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+<% } %>
