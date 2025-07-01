@@ -1,10 +1,10 @@
-import { resume } from "../../index.js";
-import SectionHeader from "../components/SectionHeader.js";
-import Title from "../components/Title.js";
+import { resume } from "../../index.js"
+import SectionHeader from "../components/SectionHeader.js"
+import Title from "../components/Title.js"
 
 const Projects = () => {
-  const projects = resume.projects;
-  if (!projects?.length) return null;
+  const projects = resume.projects
+  if (!projects?.length) return null
 
   return (
     <div className="container project-container">
@@ -32,7 +32,7 @@ const Projects = () => {
         </section>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

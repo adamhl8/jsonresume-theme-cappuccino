@@ -1,4 +1,4 @@
-import { resume } from "../../index.js";
+import { resume } from "../../index.js"
 
 function ResumeHeader() {
   return (
@@ -11,7 +11,7 @@ function ResumeHeader() {
         {resume.basics?.image && <img src={resume.basics.image} alt="profile-pic" />}
       </div>
     </header>
-  );
+  )
 }
 
-export default ResumeHeader;
+export default ResumeHeader

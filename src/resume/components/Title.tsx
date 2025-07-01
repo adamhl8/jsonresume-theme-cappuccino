@@ -1,5 +1,5 @@
 interface TitleProps {
-  title: string;
+  title: string
 }
 
 function Title({ title }: TitleProps) {
@@ -8,7 +8,7 @@ function Title({ title }: TitleProps) {
       <h3>{title}</h3>
       <div className="keyline"></div>
     </div>
-  );
+  )
 }
 
-export default Title;
+export default Title

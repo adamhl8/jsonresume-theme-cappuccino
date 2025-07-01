@@ -1,14 +1,14 @@
-import React from "react";
-import { formatDate, removeProtocol } from "../../utils.js";
+import React from "react"
+import { formatDate, removeProtocol } from "../../utils.js"
 
 interface SectionHeaderProps {
-  name?: string;
-  website?: string;
-  showWebsite?: boolean;
-  startDate?: string;
-  endDate?: string;
-  releaseDate?: string;
-  description?: string;
+  name?: string
+  website?: string
+  showWebsite?: boolean
+  startDate?: string
+  endDate?: string
+  releaseDate?: string
+  description?: string
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({
@@ -53,7 +53,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       </h5>
       {description && <h4>{description}</h4>}
     </div>
-  );
-};
+  )
+}
 
-export default SectionHeader;
+export default SectionHeader
