@@ -1,11 +1,11 @@
-import { resume } from "../../index.js";
-import SectionHeader from "../components/SectionHeader.js";
-import Title from "../components/Title.js";
+import { resume } from "../../index.js"
+import SectionHeader from "../components/SectionHeader.js"
+import Title from "../components/Title.js"
 
 const Work = () => {
-  const work = resume.work;
-  if (!work) return;
-  if (!resume.work?.length) return null;
+  const work = resume.work
+  if (!work) return
+  if (!resume.work?.length) return null
 
   return (
     <div className="container work-container">
@@ -30,7 +30,7 @@ const Work = () => {
         </section>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Work;
+export default Work

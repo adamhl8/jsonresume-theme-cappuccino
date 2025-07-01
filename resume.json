@@ -27,15 +27,7 @@
   "skills": [
     {
       "name": "Languages",
-      "keywords": [
-        "TypeScript/JavaScript",
-        "HTML",
-        "CSS",
-        "Python",
-        "Java",
-        "Lua",
-        "SQL"
-      ]
+      "keywords": ["TypeScript/JavaScript", "HTML", "CSS", "Python", "Java", "Lua", "SQL"]
     },
     {
       "name": "Technologies",

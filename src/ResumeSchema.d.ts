@@ -8,58 +8,58 @@
 /**
  * Similar to the standard date type, but each section after the year is optional. e.g. 2014-06-29 or 2023-04
  */
-export type Iso8601 = string;
+export type Iso8601 = string
 
 export interface ResumeSchema {
   /**
    * link to the version of the schema that can validate the resume
    */
-  $schema?: string;
+  $schema?: string
   basics?: {
-    name?: string;
+    name?: string
     /**
      * e.g. Web Developer
      */
-    label?: string;
+    label?: string
     /**
      * URL (as per RFC 3986) to a image in JPEG or PNG format
      */
-    image?: string;
+    image?: string
     /**
      * e.g. thomas@gmail.com
      */
-    email?: string;
+    email?: string
     /**
      * Phone numbers are stored as strings so use any format you like, e.g. 712-117-2923
      */
-    phone?: string;
+    phone?: string
     /**
      * URL (as per RFC 3986) to your website, e.g. personal homepage
      */
-    url?: string;
+    url?: string
     /**
      * Write a short 2-3 sentence biography about yourself
      */
-    summary?: string;
+    summary?: string
     location?: {
       /**
        * To add multiple address lines, use
        * . For example, 1234 Glücklichkeit Straße
        * Hinterhaus 5. Etage li.
        */
-      address?: string;
-      postalCode?: string;
-      city?: string;
+      address?: string
+      postalCode?: string
+      city?: string
       /**
        * code as per ISO-3166-1 ALPHA-2, e.g. US, AU, IN
        */
-      countryCode?: string;
+      countryCode?: string
       /**
        * The general region where you live. Can be a US state, or a province, for instance.
        */
-      region?: string;
-      [k: string]: unknown;
-    };
+      region?: string
+      [k: string]: unknown
+    }
     /**
      * Specify any number of social networks that you participate in
      */
@@ -67,106 +67,106 @@ export interface ResumeSchema {
       /**
        * e.g. Facebook or Twitter
        */
-      network?: string;
+      network?: string
       /**
        * e.g. neutralthoughts
        */
-      username?: string;
+      username?: string
       /**
        * e.g. http://twitter.example.com/neutralthoughts
        */
-      url?: string;
-      [k: string]: unknown;
-    }[];
-    [k: string]: unknown;
-  };
+      url?: string
+      [k: string]: unknown
+    }[]
+    [k: string]: unknown
+  }
   work?: {
     /**
      * e.g. Facebook
      */
-    name?: string;
+    name?: string
     /**
      * e.g. Menlo Park, CA
      */
-    location?: string;
+    location?: string
     /**
      * e.g. Social Media Company
      */
-    description?: string;
+    description?: string
     /**
      * e.g. Software Engineer
      */
-    position?: string;
+    position?: string
     /**
      * e.g. http://facebook.example.com
      */
-    url?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
+    url?: string
+    startDate?: Iso8601
+    endDate?: Iso8601
     /**
      * Give an overview of your responsibilities at the company
      */
-    summary?: string;
+    summary?: string
     /**
      * Specify multiple accomplishments
      */
-    highlights?: string[];
-    [k: string]: unknown;
-  }[];
+    highlights?: string[]
+    [k: string]: unknown
+  }[]
   volunteer?: {
     /**
      * e.g. Facebook
      */
-    organization?: string;
+    organization?: string
     /**
      * e.g. Software Engineer
      */
-    position?: string;
+    position?: string
     /**
      * e.g. http://facebook.example.com
      */
-    url?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
+    url?: string
+    startDate?: Iso8601
+    endDate?: Iso8601
     /**
      * Give an overview of your responsibilities at the company
      */
-    summary?: string;
+    summary?: string
     /**
      * Specify accomplishments and achievements
      */
-    highlights?: string[];
-    [k: string]: unknown;
-  }[];
+    highlights?: string[]
+    [k: string]: unknown
+  }[]
   education?: {
     /**
      * e.g. Massachusetts Institute of Technology
      */
-    institution?: string;
+    institution?: string
     /**
      * e.g. http://facebook.example.com
      */
-    url?: string;
+    url?: string
     /**
      * e.g. Arts
      */
-    area?: string;
+    area?: string
     /**
      * e.g. Bachelor
      */
-    studyType?: string;
-    startDate?: Iso8601;
-    endDate?: Iso8601;
+    studyType?: string
+    startDate?: Iso8601
+    endDate?: Iso8601
     /**
      * grade point average, e.g. 3.67/4.0
      */
-    score?: string;
+    score?: string
     /**
      * List notable courses/subjects
      */
-    courses?: string[];
-    [k: string]: unknown;
-  }[];
+    courses?: string[]
+    [k: string]: unknown
+  }[]
   /**
    * Specify any awards you have received throughout your professional career
    */
@@ -174,18 +174,18 @@ export interface ResumeSchema {
     /**
      * e.g. One of the 100 greatest minds of the century
      */
-    title?: string;
-    date?: Iso8601;
+    title?: string
+    date?: Iso8601
     /**
      * e.g. Time Magazine
      */
-    awarder?: string;
+    awarder?: string
     /**
      * e.g. Received for my work with Quantum Physics
      */
-    summary?: string;
-    [k: string]: unknown;
-  }[];
+    summary?: string
+    [k: string]: unknown
+  }[]
   /**
    * Specify any certificates you have received throughout your professional career
    */
@@ -193,18 +193,18 @@ export interface ResumeSchema {
     /**
      * e.g. Certified Kubernetes Administrator
      */
-    name?: string;
-    date?: Iso8601;
+    name?: string
+    date?: Iso8601
     /**
      * e.g. http://example.com
      */
-    url?: string;
+    url?: string
     /**
      * e.g. CNCF
      */
-    issuer?: string;
-    [k: string]: unknown;
-  }[];
+    issuer?: string
+    [k: string]: unknown
+  }[]
   /**
    * Specify your publications through your career
    */
@@ -212,22 +212,22 @@ export interface ResumeSchema {
     /**
      * e.g. The World Wide Web
      */
-    name?: string;
+    name?: string
     /**
      * e.g. IEEE, Computer Magazine
      */
-    publisher?: string;
-    releaseDate?: Iso8601;
+    publisher?: string
+    releaseDate?: Iso8601
     /**
      * e.g. http://www.computer.org.example.com/csdl/mags/co/1996/10/rx069-abs.html
      */
-    url?: string;
+    url?: string
     /**
      * Short summary of publication. e.g. Discussion of the World Wide Web, HTTP, HTML.
      */
-    summary?: string;
-    [k: string]: unknown;
-  }[];
+    summary?: string
+    [k: string]: unknown
+  }[]
   /**
    * List out your professional skill-set
    */
@@ -235,17 +235,17 @@ export interface ResumeSchema {
     /**
      * e.g. Web Development
      */
-    name?: string;
+    name?: string
     /**
      * e.g. Master
      */
-    level?: string;
+    level?: string
     /**
      * List some keywords pertaining to this skill
      */
-    keywords?: string[];
-    [k: string]: unknown;
-  }[];
+    keywords?: string[]
+    [k: string]: unknown
+  }[]
   /**
    * List any other languages you speak
    */
@@ -253,21 +253,21 @@ export interface ResumeSchema {
     /**
      * e.g. English, Spanish
      */
-    language?: string;
+    language?: string
     /**
      * e.g. Fluent, Beginner
      */
-    fluency?: string;
-    [k: string]: unknown;
-  }[];
+    fluency?: string
+    [k: string]: unknown
+  }[]
   interests?: {
     /**
      * e.g. Philosophy
      */
-    name?: string;
-    keywords?: string[];
-    [k: string]: unknown;
-  }[];
+    name?: string
+    keywords?: string[]
+    [k: string]: unknown
+  }[]
   /**
    * List references you have received
    */
@@ -275,13 +275,13 @@ export interface ResumeSchema {
     /**
      * e.g. Timothy Cook
      */
-    name?: string;
+    name?: string
     /**
      * e.g. Joe blogs was a great employee, who turned up to work at least once a week. He exceeded my expectations when it came to doing nothing.
      */
-    reference?: string;
-    [k: string]: unknown;
-  }[];
+    reference?: string
+    [k: string]: unknown
+  }[]
   /**
    * Specify career projects
    */
@@ -289,39 +289,39 @@ export interface ResumeSchema {
     /**
      * e.g. The World Wide Web
      */
-    name?: string;
+    name?: string
     /**
      * Short summary of project. e.g. Collated works of 2017.
      */
-    description?: string;
+    description?: string
     /**
      * Specify multiple features
      */
-    highlights?: string[];
+    highlights?: string[]
     /**
      * Specify special elements involved
      */
-    keywords?: string[];
-    startDate?: Iso8601;
-    endDate?: Iso8601;
+    keywords?: string[]
+    startDate?: Iso8601
+    endDate?: Iso8601
     /**
      * e.g. http://www.computer.org/csdl/mags/co/1996/10/rx069-abs.html
      */
-    url?: string;
+    url?: string
     /**
      * Specify your role on this project or in company
      */
-    roles?: string[];
+    roles?: string[]
     /**
      * Specify the relevant company/entity affiliations e.g. 'greenpeace', 'corporationXYZ'
      */
-    entity?: string;
+    entity?: string
     /**
      *  e.g. 'volunteering', 'presentation', 'talk', 'application', 'conference'
      */
-    type?: string;
-    [k: string]: unknown;
-  }[];
+    type?: string
+    [k: string]: unknown
+  }[]
   /**
    * The schema version and any other tooling configuration lives here
    */
@@ -329,15 +329,15 @@ export interface ResumeSchema {
     /**
      * URL (as per RFC 3986) to latest version of this document
      */
-    canonical?: string;
+    canonical?: string
     /**
      * A version field which follows semver - e.g. v1.0.0
      */
-    version?: string;
+    version?: string
     /**
      * Using ISO 8601 with YYYY-MM-DDThh:mm:ss
      */
-    lastModified?: string;
-    [k: string]: unknown;
-  };
+    lastModified?: string
+    [k: string]: unknown
+  }
 }

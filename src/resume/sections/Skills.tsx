@@ -1,8 +1,8 @@
-import { resume } from "../../index.js";
-import Title from "../components/Title.js";
+import { resume } from "../../index.js"
+import Title from "../components/Title.js"
 
 function Skills() {
-  if (!resume.skills?.length) return null;
+  if (!resume.skills?.length) return null
 
   return (
     <div className="skills-container">
@@ -22,7 +22,7 @@ function Skills() {
         </section>
       ))}
     </div>
-  );
+  )
 }
 
-export default Skills;
+export default Skills

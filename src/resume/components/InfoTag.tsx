@@ -1,7 +1,7 @@
 interface InfoTagProps {
-  text: string;
-  url?: string;
-  icon?: string;
+  text: string
+  url?: string
+  icon?: string
 }
 
 function InfoTag({ text, url, icon }: InfoTagProps) {
@@ -18,7 +18,7 @@ function InfoTag({ text, url, icon }: InfoTagProps) {
         )}
       </h6>
     </div>
-  );
+  )
 }
 
-export default InfoTag;
+export default InfoTag
