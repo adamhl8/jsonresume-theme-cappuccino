@@ -7,11 +7,11 @@
   "license": "MIT",
   "exports": "./index.js",
   "scripts": {
-    "format": "prettier --write .",
     "refresh-schema": "bun run refresh-schema.ts && rm -rf ./tmp/",
     "start": "bun run ./src/index.ts",
     "render": "bun compile && ./render.sh",
-    "compile": "./compile.sh"
+    "compile": "./compile.sh",
+    "lint": "tsc --noEmit && biome check --write"
   },
   "dependencies": {
     "address-format": "^0.0.3",
