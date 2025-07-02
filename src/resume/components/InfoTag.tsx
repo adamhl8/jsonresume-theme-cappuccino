@@ -7,7 +7,7 @@ interface InfoTagProps {
 function InfoTag({ text, url, icon }: InfoTagProps) {
   return (
     <div className="info-tag-container">
-      {icon && <i className={`fa ${icon}`}></i>}
+      {icon && <i className={`fa ${icon}`} />}
       <h6 className="info-text">
         {url ? (
           <a href={url} target="_blank" rel="noreferrer">

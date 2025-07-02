@@ -21,7 +21,7 @@
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
-    "@adamhl8/configs": "^0.3.0",
+    "@adamhl8/configs": "^0.4.2",
     "@biomejs/biome": "^2.0.6",
     "@types/bun": "latest",
     "@types/react": "^19.1.8",
