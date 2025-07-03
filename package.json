@@ -7,11 +7,14 @@
   "license": "MIT",
   "exports": "./index.js",
   "scripts": {
-    "refresh-schema": "bun run refresh-schema.ts && rm -rf ./tmp/",
-    "start": "bun run ./src/index.ts",
-    "render": "bun compile && ./render.sh",
+    "bundle": "rm -rf ./dist && bun lint && tsc && tsc-alias",
     "compile": "./compile.sh",
-    "lint": "tsc --noEmit && biome check --write"
+    "lint": "tsc --noEmit && biome check --write",
+    "prepare": "find .githooks -type f -exec ln -srf {} .git/hooks/ \\;",
+    "prepublishOnly": "bun bundle",
+    "refresh-schema": "bun run refresh-schema.ts && rm -rf ./tmp/",
+    "render": "bun compile && ./render.sh",
+    "start": "bun run ./src/index.ts"
   },
   "dependencies": {
     "address-format": "^0.0.3",
