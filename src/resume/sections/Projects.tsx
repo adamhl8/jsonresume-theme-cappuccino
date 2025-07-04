@@ -1,6 +1,6 @@
-import { resume } from "../../index.js"
-import SectionHeader from "../components/SectionHeader.js"
-import Title from "../components/Title.js"
+import { resume } from "@/index.js"
+import SectionHeader from "@/resume/components/SectionHeader.js"
+import Title from "@/resume/components/Title.js"
 
 const Projects = () => {
   const projects = resume.projects

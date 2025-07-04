@@ -1,5 +1,5 @@
 import React from "react"
-import { formatDate, removeProtocol } from "../../utils.js"
+import { formatDate, removeProtocol } from "@/utils.js"
 
 interface SectionHeaderProps {
   name?: string

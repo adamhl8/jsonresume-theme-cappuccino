@@ -1,4 +1,4 @@
-import { resume } from "../../index.js"
+import { resume } from "@/index.js"
 
 function ResumeHeader() {
   return (

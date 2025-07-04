@@ -1,4 +1,4 @@
-import InfoTag from "./InfoTag.js"
+import InfoTag from "@/resume/components/InfoTag.js"
 
 type Profiles = {
   network?: string

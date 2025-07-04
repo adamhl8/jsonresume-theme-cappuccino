@@ -1,8 +1,8 @@
-import { resume } from "../../index.js"
-import { formatAddress } from "../../utils.js"
-import InfoTag from "../components/InfoTag.js"
-import Social from "../components/Social.js"
-import Title from "../components/Title.js"
+import { resume } from "@/index.js"
+import { formatAddress } from "@/utils.js"
+import InfoTag from "@/resume/components/InfoTag.js"
+import Social from "@/resume/components/Social.js"
+import Title from "@/resume/components/Title.js"
 
 function About() {
   if (!resume.basics) return
