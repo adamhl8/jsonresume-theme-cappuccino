@@ -1,5 +1,5 @@
-import { resume } from "../../index.js"
-import Title from "../components/Title.js"
+import { resume } from "@/index.js"
+import Title from "@/resume/components/Title.js"
 
 function Skills() {
   if (!resume.skills?.length) return null
