@@ -11,7 +11,7 @@
         "react-dom": "^19.1.0",
       },
       "devDependencies": {
-        "@adamhl8/configs": "^0.8.1",
+        "@adamhl8/configs": "^0.8.2",
         "@biomejs/biome": "^2.0.6",
         "@types/bun": "latest",
         "@types/react": "^19.1.8",
@@ -24,7 +24,7 @@
     },
   },
   "packages": {
-    "@adamhl8/configs": ["@adamhl8/configs@0.8.1", "", { "dependencies": { "@prettier/plugin-xml": "^3.4.1", "prettier-plugin-astro": "^0.14.1", "prettier-plugin-sh": "^0.18.0", "prettier-plugin-tailwindcss": "^0.6.13", "prettier-plugin-toml": "^2.0.5" } }, "sha512-GfJKL/bZXt5N/U7F++txOpnVk214ZFaIQXLILjED9sAOKFk0bX2ucrqIjy0qHNYeGulWfPVniwvMe/WtyA8ggw=="],
+    "@adamhl8/configs": ["@adamhl8/configs@0.8.2", "", { "dependencies": { "@prettier/plugin-xml": "^3.4.1", "prettier-plugin-astro": "^0.14.1", "prettier-plugin-sh": "^0.18.0", "prettier-plugin-tailwindcss": "^0.6.13", "prettier-plugin-toml": "^2.0.5" } }, "sha512-JYdjrb5heKgCJU6W67PXQTv550iEkNRQbZgxIDst3gMCR0SsRH+1wyKmQaV88u1UIlGq0kD5WYBLBip7iZGAjA=="],
 
     "@apidevtools/json-schema-ref-parser": ["@apidevtools/json-schema-ref-parser@11.9.3", "", { "dependencies": { "@jsdevtools/ono": "^7.1.3", "@types/json-schema": "^7.0.15", "js-yaml": "^4.1.0" } }, "sha512-60vepv88RwcJtSHrD6MjIL6Ta3SOYbgfnkHb+ppAVK+o9mXprRtulx7VlRl3lN3bbvysAfCS7WMVfhUYemB0IQ=="],
 
