@@ -2,13 +2,13 @@ import { resume } from "@/index.js"
 import Title from "@/resume/components/Title.js"
 
 function Education() {
-  if (!resume.education?.length) return null
+  if (resume.education?.length === 0) return null
 
   return (
-    <div className="container education-container">
+    <div className="education-container container">
       <Title title="Education" />
-      {resume.education.map((education, index) => (
-        <section className="item" key={index}>
+      {resume.education?.map((education) => (
+        <section className="item" key={education.startDate}>
           <h4 className="bold pull-left">{education.institution}</h4>
 
           {education.studyType && education.area && (
@@ -29,10 +29,10 @@ function Education() {
             </h5>
           )}
 
-          {education.courses?.length && (
+          {education.courses && education.courses.length > 0 && (
             <ul className="two-column">
-              {education.courses.map((course, courseIndex) => (
-                <li key={courseIndex}>{course}</li>
+              {education.courses.map((course) => (
+                <li key={course}>{course}</li>
               ))}
             </ul>
           )}

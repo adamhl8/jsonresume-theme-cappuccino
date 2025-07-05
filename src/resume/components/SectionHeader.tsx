@@ -1,4 +1,5 @@
-import React from "react"
+import type React from "react"
+
 import { formatDate, removeProtocol } from "@/utils.js"
 
 interface SectionHeaderProps {
@@ -41,15 +42,14 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           )}
         </h3>
       )}
-      <h5 className="italic pull-right">
+      <h5 className="pull-right italic">
         {startDate ? (
           <>
             <span className="startDate">{formatDate(startDate)}</span>
             <span className="endDate"> - {endDate ? formatDate(endDate) : "Present"}</span>
           </>
-        ) : releaseDate ? (
-          formatDate(releaseDate)
-        ) : null}
+        ) : undefined}
+        {!startDate && releaseDate ? formatDate(releaseDate) : null}
       </h5>
       {description && <h4>{description}</h4>}
     </div>

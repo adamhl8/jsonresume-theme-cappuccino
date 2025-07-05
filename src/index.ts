@@ -1,5 +1,6 @@
 import { renderToStaticMarkup } from "react-dom/server"
-import { ResumeSchema } from "@/ResumeSchema.js"
+
+import type { ResumeSchema } from "@/ResumeSchema.js"
 import { Resume } from "@/resume/Resume.js"
 
 let resume: ResumeSchema

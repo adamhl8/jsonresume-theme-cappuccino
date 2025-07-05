@@ -11,13 +11,21 @@ interface SocialProps {
 }
 
 function Social({ profiles }: SocialProps) {
+  // biome-ignore lint/nursery/useIterableCallbackReturn: ignore
   const profilesArray = profiles.map((profile) => {
-    if (!profile.username || !profile.url) return
+    if (!(profile.username && profile.url)) return
 
     if (profile.network?.toLowerCase() === "linkedin") {
-      return <InfoTag text={profile.username} icon="fa-linkedin-square" url={profile.url} />
+      return <InfoTag key={profile.network} text={profile.username} icon="fa-linkedin-square" url={profile.url} />
     }
-    return <InfoTag text={profile.username} icon={`fa-${profile.network?.toLowerCase()}`} url={profile.url} />
+    return (
+      <InfoTag
+        key={profile.network}
+        text={profile.username}
+        icon={`fa-${profile.network?.toLowerCase()}`}
+        url={profile.url}
+      />
+    )
   })
   return profilesArray
 }

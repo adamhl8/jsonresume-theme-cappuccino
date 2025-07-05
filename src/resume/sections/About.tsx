@@ -1,8 +1,8 @@
 import { resume } from "@/index.js"
-import { formatAddress } from "@/utils.js"
 import InfoTag from "@/resume/components/InfoTag.js"
 import Social from "@/resume/components/Social.js"
 import Title from "@/resume/components/Title.js"
+import { formatAddress } from "@/utils.js"
 
 function About() {
   if (!resume.basics) return
@@ -16,7 +16,7 @@ function About() {
   )
 
   return (
-    <div className="container about-container">
+    <div className="about-container container">
       <Title title="About" />
 
       {resume.basics.location && <InfoTag text={location} icon="fa-map-marker" />}

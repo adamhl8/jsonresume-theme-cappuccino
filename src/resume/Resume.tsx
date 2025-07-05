@@ -1,5 +1,6 @@
-import fs from "node:fs"
-import path from "node:path"
+import * as fs from "node:fs"
+import * as path from "node:path"
+
 import { resume } from "@/index.js"
 import ResumeHeader from "@/resume/components/ResumeHeader.js"
 import About from "@/resume/sections/About.js"
@@ -18,11 +19,12 @@ function Resume() {
         <meta name="viewport" content="width=device-width, user-scalable=no, minimal-ui" />
         <title>{resume.basics?.name}</title>
         <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+        {/** biome-ignore lint/security/noDangerouslySetInnerHtml: this is intentional */}
         <style dangerouslySetInnerHTML={{ __html: css }} />
       </head>
 
       <body>
-        <main id="resume" className="page">
+        <main className="page">
           <ResumeHeader />
           <div className="resume-content">
             <aside className="left-column">

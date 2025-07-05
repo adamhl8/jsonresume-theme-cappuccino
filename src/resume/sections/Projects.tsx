@@ -4,28 +4,28 @@ import Title from "@/resume/components/Title.js"
 
 const Projects = () => {
   const projects = resume.projects
-  if (!projects?.length) return null
+  if (projects?.length === 0) return null
 
   return (
-    <div className="container project-container">
+    <div className="project-container container">
       <Title title="Open Source Projects" />
-      {projects.map((project, index) => (
-        <section className="item" key={index}>
+      {projects?.map((project) => (
+        <section className="item" key={project.name}>
           <SectionHeader name={project.name || ""} website={project.url || ""} showWebsite={true} />
-          {project.keywords?.length && (
+          {project.keywords && project.keywords.length > 0 && (
             <div className="flex-container">
-              {project.keywords.map((keyword, idx) => (
-                <h6 className="skill" key={idx}>
+              {project.keywords.map((keyword) => (
+                <h6 className="skill" key={keyword}>
                   {keyword}
                 </h6>
               ))}
             </div>
           )}
           {project.description && <p className="summary">{project.description}</p>}
-          {project.highlights?.length && (
+          {project.highlights && project.highlights.length > 0 && (
             <ul>
-              {project.highlights.map((highlight, idx) => (
-                <li key={idx}>{highlight}</li>
+              {project.highlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
               ))}
             </ul>
           )}
