@@ -10,7 +10,7 @@
     "bundle": "rm -rf ./dist && bun lint && tsc -p tsconfig.build.json && tsc-alias",
     "compile": "./compile.sh",
     "lint": "tsc --noEmit && biome check --write",
-    "prepare": "find .githooks -type f -exec ln -srf {} .git/hooks/ \\;",
+    "prepare": "find .githooks -type f -exec ln -srf {} .git/hooks/ \\; || true",
     "prepublishOnly": "bun bundle",
     "refresh-schema": "bun run refresh-schema.ts && rm -rf ./tmp/",
     "render": "bun compile && ./render.sh",
