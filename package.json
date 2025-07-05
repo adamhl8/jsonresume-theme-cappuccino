@@ -7,7 +7,7 @@
   "license": "MIT",
   "exports": "./index.js",
   "scripts": {
-    "bundle": "rm -rf ./dist && bun lint && tsc && tsc-alias",
+    "bundle": "rm -rf ./dist && bun lint && tsc -p tsconfig.build.json && tsc-alias",
     "compile": "./compile.sh",
     "lint": "tsc --noEmit && biome check --write",
     "prepare": "find .githooks -type f -exec ln -srf {} .git/hooks/ \\;",
