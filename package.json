@@ -1,6 +1,6 @@
 {
   "name": "jsonresume-theme-react-tailwind",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "type": "module",
   "description": "A JSON Resume theme built with React and Tailwind.",
   "repository": {

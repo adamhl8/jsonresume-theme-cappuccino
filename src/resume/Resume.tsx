@@ -2,6 +2,7 @@ import * as fs from "node:fs"
 import * as path from "node:path"
 
 import { resume } from "@/index.js"
+import PrintButton from "@/resume/components/PrintButton.js"
 import About from "@/resume/sections/About.js"
 import Education from "@/resume/sections/Education.js"
 import Projects from "@/resume/sections/Projects.js"
@@ -25,6 +26,7 @@ function Resume() {
       </head>
 
       <body className="mt-10 mb-10 grid grid-cols-1 justify-items-center print:m-0">
+        <PrintButton className="mb-8 print:hidden" />
         <main className="w-[815px] p-12 shadow-[0_0_25px_rgba(0,0,0,0.25)] print:w-full print:p-0 print:shadow-none">
           <div className="mb-4 border-secondary border-t-8" />
 
