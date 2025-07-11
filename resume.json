@@ -1,0 +1,7 @@
+{
+  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/schema.json",
+  "basics": {
+    "name": "Bob McCoder",
+    "label": "Senior O2 to CO2 Engineer"
+  }
+}

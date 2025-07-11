@@ -1,72 +1,69 @@
-# jsonresume-theme-cappuccino
+# jsonresume-theme-react-tailwind
 
-Cappuccino is a [JSON Resume](https://jsonresume.org) theme based on the [Macchiato theme](https://github.com/biosan/jsonresume-theme-macchiato).
+This is a [JSON Resume](https://jsonresume.org) theme based on the [Macchiato theme](https://github.com/biosan/jsonresume-theme-macchiato).
 
-It's built using TypeScript/React to provide a more modern and streamlined development experience.
+It's built using TypeScript/React/Tailwind to provide a more modern and streamlined development experience.
 
 ## Why?
 
 Most JSON Resume themes are built using plain old JavaScript + a templating engine such as [Handlebars](https://handlebarsjs.com). Templating engine syntax quickly becomes messy and difficult to maintain, and the lack of type safety makes for a frustrating development experience.
 
-I wanted to use more modern, well-known tools (i.e. TypeScript/React) to get the all the benefits of type safety, IDE autocompletion, etc. There were some interesting technical challenges to solve in doing this which you can read more about in the [technical details](#technical-details) section.
+I wanted to use more modern, well-known tools (i.e. TypeScript/React/Tailwind) to get the all the benefits of type safety, IDE autocompletion, etc. There were some interesting technical challenges to solve in doing this which you can read more about in the [technical details](#technical-details) section.
 
 ## Usage
 
-*This package is currently unpublished, so the following instructions don't work (yet). See [local usage](#local-usage) instead.*
+> [!IMPORTANT]
+> This project is intended to be forked and used as a starting point for building your own theme. As such, it currently only supports a small subset of the JSON Resume schema.
 
-1. Install [resumed](https://github.com/rbardini/resumed)
-
-```sh
-npm install -g resumed
-```
-
-2. Install `jsonresume-theme-cappuccino`
-
-```sh
-npm install -g jsonresume-theme-cappuccino
-```
-
-3. Generate your resume (assuming your `resume.json` is in the current directory)
-
-```sh
-resumed render resume.json -t jsonresume-theme-cappuccino
-```
-
-## Local Usage
-
-This project includes [resumed](https://github.com/rbardini/resumed) as a dev dependency so there's no need to install anything globally.
+This project includes [resumed](https://github.com/rbardini/resumed) as a dev dependency so there's no need to install it globally.
 
 1. Clone this repository
 
-```sh
-git clone https://github.com/adamhl8/jsonresume-theme-cappuccino.git
-```
+   ```sh
+   git clone https://github.com/adamhl8/jsonresume-theme-react-tailwind.git
+   ```
 
 2. Install dependencies ([install Bun](https://bun.sh) if you need to)
 
-```sh
-bun install
-```
+   ```sh
+   bun install
+   ```
 
 3. Replace `resume.json` with your own
 
 4. Generate your resume
-
-```sh
-bun render
-```
+   ```sh
+   bun render
+   ```
 
 Your resume will be saved to `resume.html`.
 
+> [!TIP] Export PDF
+> The resumed CLI supports exporting your resume as a PDF via `resumed export`. However, I've found that this doesn't always render correctly.
+>
+> I recommend opening `resume.html` in your browser and using the native print to PDF feature.
+
+### Watch Mode
+
+For a better development experience, you can run `bun watch` to automatically regenerate the `resume.html` file whenever you make changes to `resume.json` or anything in the `src` directory.
+
+1. Install [watchexec](https://github.com/watchexec/watchexec/tree/main?tab=readme-ov-file#install)
+2. Run `bun watch`
+3. Open `resume.html` in your browser
+
+> [!IMPORTANT]
+> You will need to manually refresh the browser page to see changes.
+
 ## Technical Details
 
-You *could* just manually write your entire resume in one HTML file, but that would be a pain to maintain. Templating engines like Handlebars are used because it allows you to split your HTML multiple files and create reusable components. React of course allows the same. It also allows you to use standard JavaScript features, rather than relying on custom templating engine syntax.
+You _could_ just manually write your entire resume in one HTML file, but that would be a pain to maintain. Templating engines like Handlebars are used because it allows you to split your HTML multiple files and create reusable components. React of course allows the same. It also allows you to use standard JavaScript features, rather than relying on custom templating engine syntax.
 
-React is usually used in the context of a web app, where the React code is sent to the client along with the HTML to allow the DOM to be manipulated (*🎉reactivity🎉*). In this case, we don't need anything to be interactive, we're just using React as a means to organize our code.
+React is usually used in the context of a web app, where the React code is sent to the client along with the HTML to allow the DOM to be manipulated (_🎉reactivity🎉_). In this case, we don't need anything to be interactive, we're just using React as a means to organize our code.
 
 ### JSON Resume themes
 
 JSON Resume themes are relatively simple overall. A theme needs to do two things:
+
 1. Define a `render` function
 2. Make sure the `render` function returns a valid string of HTML (which is your entire resume)
 
@@ -78,27 +75,29 @@ In essence, a tool like `resumed` is just doing this:
 - Call the `render` function from the specified theme, passing in the `resume.json` data
 - Write the returned HTML to a file
 
-What does this mean for the theme developer? Well, it means that you can use whatever you want to generate the HTML. As long as you return a valid string of HTML, it should work. In my case, I needed to figure out if it was possible to take React/JSX and "convert" it to HTML.
+What does this mean for the theme developer? Well, it means that we can use whatever we want to generate the HTML. As long as we return a valid string of HTML, it should work. In this case, we need to figure out if it's possible to take React/JSX and "convert" it to HTML.
 
 ### renderToStaticMarkup()
 
-Fortunately, React provides a function to do just that. [`renderToStaticMarkup`](https://react.dev/reference/react-dom/server/renderToStaticMarkup) (from `react-dom/server`) renders a *non-interactive* React tree to a string of HTML.
+Fortunately, React provides a function to do just that. [`renderToStaticMarkup`](https://react.dev/reference/react-dom/server/renderToStaticMarkup) (from `react-dom/server`) renders a _non-interactive_ React tree to a string of HTML.
 
 The "non-interactive" part is important. Anything you'd normally do with React to create something interactive/reactive won't work here. Specifically, hooks like `useState` are effectively ignored; you just get the raw markup.
 
-With this, I have pretty much everything I need. I can use TypeScript/React to create the theme and then convert the whole thing to a string HTML.
+With this, we have pretty much everything we need. We can use TypeScript/React to create the theme and then convert the whole thing to a string of HTML.
 
-### CSS
+### Tailwind/CSS
 
-The generated HTML file (i.e. the resume) needs to include *everything*, including CSS. If I want to have my CSS as a separate, normal `.css` file, I need a way to include it in the React tree before `renderToStaticMarkup` is called. The theme runs locally, not in a browser, so I can use runtime-specific APIs (like `node:fs`) to read files.
+The Tailwind CLI makes it really easy to generate the final CSS file. e.g. `tailwindcss -i input.css -o output.css` So there's not much that needs to be done for Tailwind specifically.
 
-In `src/resume/Resume.tsx`, I read in my `style.css` file like so:
+The real question is how do we get our generated HTML file (i.e. the resume) to include the CSS? We need a way to include it in the React tree before `renderToStaticMarkup` is called. The theme runs locally, not in a browser, so I can use runtime-specific APIs (like `node:fs`) to read files.
+
+In `src/resume/Resume.tsx`, we read in our `global.css` file like so:
 
 ```ts
-const css = fs.readFileSync(path.join(import.meta.dirname, "style.css"), "utf-8");
+const css = fs.readFileSync(path.join(import.meta.dirname, "global.css"), "utf-8")
 ```
 
-Now I can pass this string of CSS into a `<style>` tag. In order pass in the raw, unescaped string, you can use the React property `dangerouslySetInnerHTML`:
+Now we can pass this string of CSS into a `<style>` tag. In order pass in the raw, unescaped string, we can use the React property `dangerouslySetInnerHTML`:
 
 ```tsx
 <style dangerouslySetInnerHTML={{ __html: css }} />
