@@ -38,7 +38,9 @@ This project includes [resumed](https://github.com/rbardini/resumed) as a dev de
 
 Your resume will be saved to `resume.html`.
 
-> [!TIP] Export PDF
+> [!TIP]
+> **Export PDF**
+>
 > The resumed CLI supports exporting your resume as a PDF via `resumed export`. However, I've found that this doesn't always render correctly.
 >
 > I recommend opening `resume.html` in your browser and using the native print to PDF feature.
