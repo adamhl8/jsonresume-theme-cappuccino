@@ -1,34 +1,40 @@
 import { resume } from "@/index.js"
-import SectionHeader from "@/resume/components/SectionHeader.js"
 import Title from "@/resume/components/Title.js"
 
 const Work = () => {
-  const work = resume.work
-  if (!work) return
-  if (resume.work?.length === 0) return null
+  const { work } = resume
+  if (!work || work.length === 0) return
 
   return (
-    <div className="work-container container">
+    <div>
       <Title title="Experience" />
-      {work.map((job) => (
-        <section className="item" key={job.name}>
-          <SectionHeader name={job.position || ""} />
-          <h4>
-            <span className="secondary bold">{job.name}</span> |{" "}
-            <i>
-              {job.startDate} - {job.endDate}
-            </i>
-          </h4>
-          {job.summary && <p className="summary">{job.summary}</p>}
-          {job.highlights && job.highlights.length > 0 && (
-            <ul>
-              {job.highlights.map((highlight) => (
-                <li key={highlight}>{highlight}</li>
-              ))}
-            </ul>
-          )}
-        </section>
-      ))}
+
+      <div className="space-y-3.5">
+        {work.map((job, index) => (
+          <div key={index} className="space-y-2">
+            <header>
+              <div className="font-bold text-md/tight">{job.position}</div>
+              <div className="text-sm/tight">
+                <span className="font-bold text-secondary">{job.name}</span> |{" "}
+                <span className="font-lighter italic">
+                  {job.startDate} - {job.endDate}
+                </span>
+              </div>
+            </header>
+
+            <div className="space-y-1">
+              {job.summary && <p className="text-smaller/3.5">{job.summary}</p>}
+              {job.highlights && job.highlights.length > 0 && (
+                <ul className="list-inside list-disc text-smaller/3.5">
+                  {job.highlights.map((highlight, index) => (
+                    <li key={index}>{highlight}</li>
+                  ))}
+                </ul>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

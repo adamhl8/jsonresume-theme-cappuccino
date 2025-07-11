@@ -340,4 +340,5 @@ export interface ResumeSchema {
     lastModified?: string
     [k: string]: unknown
   }
+  [k: string]: unknown
 }

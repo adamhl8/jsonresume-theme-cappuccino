@@ -2,42 +2,32 @@ import { resume } from "@/index.js"
 import Title from "@/resume/components/Title.js"
 
 function Education() {
-  if (resume.education?.length === 0) return null
+  const { education } = resume
+  if (!education || education.length === 0) return
 
   return (
-    <div className="education-container container">
+    <div>
       <Title title="Education" />
-      {resume.education?.map((education) => (
-        <section className="item" key={education.startDate}>
-          <h4 className="bold pull-left">{education.institution}</h4>
 
-          {education.studyType && education.area && (
-            <h5>
-              <span className="secondary bold">
-                {education.studyType} {education.area}
-              </span>
-            </h5>
-          )}
+      <div className="space-y-4">
+        {education.map((entry, index) => (
+          <div key={index}>
+            <div className="text-md/tight">{entry.institution}</div>
 
-          {education.score ? (
-            <h5>
-              <i>GPA: {education.score}</i>
-            </h5>
-          ) : (
-            <h5>
-              <i>in progress</i>
-            </h5>
-          )}
+            {entry.studyType && entry.area && (
+              <div className="font-bold text-secondary text-sm/tight">
+                {entry.studyType} in {entry.area}
+              </div>
+            )}
 
-          {education.courses && education.courses.length > 0 && (
-            <ul className="two-column">
-              {education.courses.map((course) => (
-                <li key={course}>{course}</li>
-              ))}
-            </ul>
-          )}
-        </section>
-      ))}
+            {entry.score ? (
+              <div className="font-lighter text-sm/tight italic">GPA: {entry.score}</div>
+            ) : (
+              <div className="font-lighter text-sm/tight italic">in progress</div>
+            )}
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

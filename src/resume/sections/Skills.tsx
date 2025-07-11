@@ -2,24 +2,25 @@ import { resume } from "@/index.js"
 import Title from "@/resume/components/Title.js"
 
 function Skills() {
-  if (resume.skills?.length === 0) return null
+  const { skills } = resume
+  if (!skills || skills.length === 0) return
 
   return (
-    <div className="skills-container">
-      {resume.skills?.map((skill) => (
-        <section className="container" key={skill.name}>
+    <div className="space-y-6">
+      {skills.map((skill, index) => (
+        <div key={index}>
           {skill.name && <Title title={skill.name} />}
-          {skill.level && <h4 className="bold capitalize">{skill.level}</h4>}
+
           {skill.keywords && skill.keywords.length > 0 && (
-            <div className="minimal flex-container">
-              {skill.keywords.map((keyword) => (
-                <h6 className="main-skill skill" key={keyword}>
+            <div className="flex flex-wrap">
+              {skill.keywords.map((keyword, index) => (
+                <span key={index} className="m-[0.15rem] rounded-sm bg-[ghostwhite] p-[0.15rem] text-sm/tight">
                   {keyword}
-                </h6>
+                </span>
               ))}
             </div>
           )}
-        </section>
+        </div>
       ))}
     </div>
   )

@@ -5,32 +5,33 @@
   "description": "",
   "author": "",
   "license": "MIT",
-  "exports": "./index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
   "scripts": {
-    "bundle": "rm -rf ./dist && bun lint && tsc -p tsconfig.build.json && tsc-alias",
-    "compile": "./compile.sh",
+    "bundle": "rm -rf ./dist && bun lint && tsc -p tsconfig.build.json && tsc-alias && tailwindcss -i ./src/resume/global.css -o ./dist/resume/global.css",
     "lint": "tsc --noEmit && biome check --write",
     "prepare": "find .githooks -type f -exec ln -srf {} .git/hooks/ \\; || true",
     "prepublishOnly": "bun bundle",
-    "refresh-schema": "bun run refresh-schema.ts && rm -rf ./tmp/",
-    "render": "bun compile && ./render.sh",
-    "start": "bun run ./src/index.ts"
+    "refresh-schema": "bun run refresh-schema.ts"
   },
   "dependencies": {
-    "address-format": "^0.0.3",
-    "eta": "^3.5.0",
-    "moment": "^2.30.1",
+    "@tabler/icons-react": "^3.34.0",
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "tailwindcss": "^4.1.11"
   },
   "devDependencies": {
     "@adamhl8/configs": "^0.9.1",
     "@biomejs/biome": "^2.1.1",
+    "@tailwindcss/cli": "^4.1.11",
     "@types/bun": "latest",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "json-schema-to-typescript": "^15.0.4",
-    "resumed": "^6.0.0",
     "tsc-alias": "^1.8.16",
     "typescript": "^5.8.3"
   }

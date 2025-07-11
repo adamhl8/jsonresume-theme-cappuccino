@@ -4,9 +4,9 @@ interface TitleProps {
 
 function Title({ title }: TitleProps) {
   return (
-    <div className="title">
-      <h3>{title}</h3>
-      <div className="keyline" />
+    <div>
+      <h3 className="font-lighter">{title}</h3>
+      <div className="mt-1.5 mb-2.5 h-[1px] w-11 bg-secondary" />
     </div>
   )
 }

@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Source Sans 3", Helvetica, Arial, sans-serif;
+  --color-primary: #39424b;
+  --color-secondary: #56817a;
+  --font-weight-lighter: 350;
+  --font-weight-semimedium: 450;
+
+  --text-smaller: 0.8125rem; /* 13px */
+  --text-smaller--line-height: calc(1.125 / 0.8125); /* 1.125 is halfway between text-sm (1.25) and text-xs (1) */
+  --text-md: 0.9375rem; /* 15px */
+  --text-md--line-height: calc(1.375 / 0.9375); /* 1.375 is halfway between text-base (1.5) and text-sm (1.25) */
+}
+
+@page {
+  size: letter;
+}

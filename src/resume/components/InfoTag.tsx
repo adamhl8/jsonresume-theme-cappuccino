@@ -1,14 +1,16 @@
+import type { TablerIcon } from "@tabler/icons-react"
+
 interface InfoTagProps {
+  Icon: TablerIcon
   text: string
   url?: string
-  icon?: string
 }
 
-function InfoTag({ text, url, icon }: InfoTagProps) {
+function InfoTag({ Icon, text, url }: InfoTagProps) {
   return (
-    <div className="info-tag-container">
-      {icon && <i className={`fa ${icon}`} />}
-      <h6 className="info-text">
+    <div className="flex items-center space-x-1.5">
+      {Icon && <Icon size={14} />}
+      <span className="text-sm">
         {url ? (
           <a href={url} target="_blank" rel="noreferrer">
             {text}
@@ -16,7 +18,7 @@ function InfoTag({ text, url, icon }: InfoTagProps) {
         ) : (
           text
         )}
-      </h6>
+      </span>
     </div>
   )
 }
