@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "jsonresume-theme-cappuccino",
+      "name": "jsonresume-theme-react-tailwind",
       "dependencies": {
         "@tabler/icons-react": "^3.34.0",
         "react": "^19.1.0",
