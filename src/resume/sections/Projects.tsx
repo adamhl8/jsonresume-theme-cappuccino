@@ -12,12 +12,12 @@ const Projects = () => {
 
       <div className="space-y-3.5">
         {projects.map((project, index) => (
-          <div key={index} className="space-y-2">
+          <div key={index}>
             <header className="space-x-1.5">
               <span className="font-bold text-md/tight">{project.name}</span>
               {project.url && (
                 <span className="space-x-1.5 font-lighter text-[dimgray] text-xs/tight">
-                  <span>&bull;</span>
+                  <span>&#8226;</span>
                   <a href={project.url} target="_blank" rel="noreferrer">
                     {removeProtocol(project.url)}
                   </a>

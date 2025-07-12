@@ -7,7 +7,8 @@ let resume: ResumeSchema
 
 function render(resumeJSON: ResumeSchema): string {
   resume = resumeJSON
-  const markup = renderToStaticMarkup(Resume())
+  let markup = renderToStaticMarkup(Resume())
+  markup = `<!doctype html>\n${markup}`
   return markup
 }
 
