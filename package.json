@@ -23,8 +23,13 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist/"],
-  "keywords": ["jsonresume", "jsonresume-theme"],
+  "files": [
+    "dist/"
+  ],
+  "keywords": [
+    "jsonresume",
+    "jsonresume-theme"
+  ],
   "scripts": {
     "bundle": "rm -rf ./dist && tsgo -p tsconfig.build.json && tsc-alias && tailwindcss -i ./src/resume/global.css -o ./dist/resume/global.css",
     "lint": "tsc --noEmit && biome check --write",
@@ -47,7 +52,7 @@
     "@types/bun": "latest",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
-    "@typescript/native-preview": "^7.0.0-dev.20250712.1",
+    "@typescript/native-preview": "^7.0.0-dev.20250715.1",
     "json-schema-to-typescript": "^15.0.4",
     "resumed": "^6.0.0",
     "tsc-alias": "^1.8.16",
